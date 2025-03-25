@@ -1,0 +1,454 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white;
+  }
+}
+
+/* Status Colors */
+.status-success {
+  @apply bg-gradient-to-r from-green-500 to-emerald-500 text-white;
+}
+
+.status-warning {
+  @apply bg-gradient-to-r from-yellow-500 to-orange-500 text-white;
+}
+
+.status-danger {
+  @apply bg-gradient-to-r from-red-500 to-rose-500 text-white;
+}
+
+.status-info {
+  @apply bg-gradient-to-r from-blue-500 to-indigo-500 text-white;
+}
+
+.status-neutral {
+  @apply bg-gradient-to-r from-gray-500 to-slate-500 text-white;
+}
+
+/* Card Gradients */
+.card-gradient-primary {
+  @apply bg-gradient-to-br from-primary-500 to-primary-600;
+}
+
+.card-gradient-success {
+  @apply bg-gradient-to-br from-green-500 to-emerald-600;
+}
+
+.card-gradient-warning {
+  @apply bg-gradient-to-br from-yellow-500 to-orange-600;
+}
+
+.card-gradient-danger {
+  @apply bg-gradient-to-br from-red-500 to-rose-600;
+}
+
+.card-gradient-info {
+  @apply bg-gradient-to-br from-blue-500 to-indigo-600;
+}
+
+/* Hover Effects */
+.hover-lift {
+  @apply transition-transform duration-200 hover:-translate-y-1;
+}
+
+.hover-glow {
+  @apply transition-shadow duration-200 hover:shadow-lg hover:shadow-primary-500/20 dark:hover:shadow-primary-400/20;
+}
+
+/* Icon Backgrounds */
+.icon-bg-primary {
+  @apply bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400;
+}
+
+.icon-bg-success {
+  @apply bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400;
+}
+
+.icon-bg-warning {
+  @apply bg-yellow-100 dark:bg-yellow-900/50 text-yellow-600 dark:text-yellow-400;
+}
+
+.icon-bg-danger {
+  @apply bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400;
+}
+
+.icon-bg-info {
+  @apply bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400;
+}
+
+/* Progress Bars */
+.progress-bar-container {
+  @apply h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden;
+}
+
+.progress-bar {
+  @apply h-full rounded-full transition-all duration-500;
+}
+
+.progress-bar-success {
+  @apply bg-gradient-to-r from-green-500 to-emerald-500;
+}
+
+.progress-bar-warning {
+  @apply bg-gradient-to-r from-yellow-500 to-orange-500;
+}
+
+.progress-bar-danger {
+  @apply bg-gradient-to-r from-red-500 to-rose-500;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Leaflet Map Styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+.leaflet-control-zoom {
+  display: none;
+}
+
+/* Calendar Styles */
+.fc {
+  --fc-border-color: theme('colors.gray.200');
+  --fc-button-bg-color: theme('colors.white');
+  --fc-button-border-color: theme('colors.gray.300');
+  --fc-button-text-color: theme('colors.gray.700');
+  --fc-button-hover-bg-color: theme('colors.gray.50');
+  --fc-button-hover-border-color: theme('colors.gray.400');
+  --fc-button-active-bg-color: theme('colors.blue.100');
+  --fc-button-active-border-color: theme('colors.blue.200');
+  --fc-event-bg-color: theme('colors.blue.600');
+  --fc-event-border-color: theme('colors.blue.600');
+  --fc-event-text-color: theme('colors.white');
+  --fc-today-bg-color: theme('colors.blue.50');
+  --fc-page-bg-color: theme('colors.white');
+  --fc-neutral-bg-color: theme('colors.white');
+}
+
+/* Dark mode overrides */
+.dark .fc {
+  --fc-border-color: theme('colors.gray.700');
+  --fc-button-bg-color: theme('colors.gray.800');
+  --fc-button-border-color: theme('colors.gray.600');
+  --fc-button-text-color: theme('colors.gray.300');
+  --fc-button-hover-bg-color: theme('colors.gray.700');
+  --fc-button-hover-border-color: theme('colors.gray.500');
+  --fc-button-active-bg-color: theme('colors.blue.900');
+  --fc-button-active-border-color: theme('colors.blue.800');
+  --fc-today-bg-color: theme('colors.blue.900/20');
+  --fc-page-bg-color: theme('colors.gray.800');
+  --fc-neutral-bg-color: theme('colors.gray.800');
+  --fc-list-event-hover-bg-color: theme('colors.gray.700');
+  --fc-highlight-color: theme('colors.gray.700');
+}
+
+/* Botões e controles */
+.fc .fc-button {
+  @apply font-medium text-sm px-4 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-900;
+}
+
+.fc .fc-button-primary {
+  @apply bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  @apply bg-blue-100 dark:bg-blue-900 border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-200;
+}
+
+/* Estilos gerais do calendário */
+.fc .fc-view {
+  @apply border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden shadow-sm bg-white dark:bg-gray-800;
+  min-height: 800px;
+}
+
+.fc .fc-toolbar-title {
+  @apply text-2xl font-bold text-gray-900 dark:text-white;
+}
+
+.fc .fc-scrollgrid {
+  @apply border-t-0;
+}
+
+/* Cabeçalhos */
+.fc .fc-col-header-cell {
+  @apply bg-gray-50 dark:bg-gray-700 py-4;
+}
+
+.fc .fc-col-header-cell-cushion {
+  @apply font-semibold text-base text-gray-700 dark:text-gray-300;
+  padding: 8px;
+}
+
+/* Visualização de semana */
+.fc .fc-timegrid-slot {
+  height: 3rem !important;
+}
+
+.fc .fc-timegrid-slot-label {
+  @apply text-xs text-gray-500 dark:text-gray-400 font-medium;
+}
+
+.fc .fc-timegrid-axis-cushion {
+  @apply text-xs text-gray-500 dark:text-gray-400 font-medium;
+  padding: 6px;
+}
+
+/* Eventos na visualização de semana */
+.fc .fc-timegrid-event-harness {
+  margin: 0 1px;
+}
+
+.fc .fc-timegrid-event {
+  @apply shadow-sm;
+  min-height: 2.5rem !important;
+  margin: 0;
+  border-radius: 4px;
+  padding: 2px !important;
+}
+
+/* Estilos específicos para o conteúdo do evento */
+.event-content {
+  padding: 2px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  overflow: hidden;
+  color: white;
+}
+
+.event-time {
+  @apply font-bold text-xs;
+  line-height: 1.1;
+  color: white;
+}
+
+.event-title {
+  @apply font-semibold text-xs;
+  line-height: 1.1;
+  color: white;
+}
+
+.event-description {
+  @apply text-xs;
+  line-height: 1.1;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.event-location {
+  @apply text-xs mt-auto;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Eventos na visualização de mês */
+.month-event {
+  @apply p-0.5;
+}
+
+.month-event div {
+  @apply text-xs;
+  color: white !important;
+}
+
+/* Cores personalizadas para diferentes disciplinas */
+.event-calculus {
+  --fc-event-bg-color: theme('colors.blue.600');
+  --fc-event-border-color: theme('colors.blue.700');
+  background-color: theme('colors.blue.600') !important;
+  border-color: theme('colors.blue.700') !important;
+  @apply hover:ring-1 hover:ring-blue-400 hover:ring-opacity-50;
+}
+
+.event-physics {
+  --fc-event-bg-color: theme('colors.green.600');
+  --fc-event-border-color: theme('colors.green.700');
+  background-color: theme('colors.green.600') !important;
+  border-color: theme('colors.green.700') !important;
+  @apply hover:ring-1 hover:ring-green-400 hover:ring-opacity-50;
+}
+
+.event-programming {
+  --fc-event-bg-color: theme('colors.purple.600');
+  --fc-event-border-color: theme('colors.purple.700');
+  background-color: theme('colors.purple.600') !important;
+  border-color: theme('colors.purple.700') !important;
+  @apply hover:ring-1 hover:ring-purple-400 hover:ring-opacity-50;
+}
+
+/* Responsividade */
+@media (min-width: 1024px) {
+  .fc .fc-timegrid-col.fc-day-today {
+    background-color: rgba(59, 130, 246, 0.05);
+  }
+
+  .fc .fc-timegrid-now-indicator-line {
+    @apply border-red-500;
+  }
+
+  .fc .fc-timegrid-now-indicator-arrow {
+    @apply border-red-500;
+  }
+}
+
+/* Ajustes para melhor visibilidade */
+.fc-theme-standard td, .fc-theme-standard th {
+  @apply border border-gray-200 dark:border-gray-700;
+}
+
+.fc .fc-daygrid-day-number {
+  @apply text-gray-700 dark:text-gray-300 font-medium text-sm;
+}
+
+.fc .fc-daygrid-day-top {
+  @apply flex justify-center;
+}
+
+/* Ajuste para o texto dos eventos na visualização de mês */
+.fc-daygrid-event-harness {
+  margin: 1px 2px;
+}
+
+.fc-daygrid-event {
+  @apply rounded-md shadow-sm;
+  padding: 1px 2px;
+}
+
+/* Ajuste para o texto dos eventos na visualização de semana */
+.fc-timegrid-event .fc-event-main {
+  padding: 1px 2px;
+}
+
+/* Dark mode specific adjustments */
+.dark .fc-day {
+  @apply bg-gray-800;
+}
+
+.dark .fc-day-today {
+  @apply bg-blue-900/20 !important;
+}
+
+.dark .fc-timegrid-slot {
+  @apply border-gray-700;
+}
+
+.dark .fc-timegrid-slot-lane {
+  @apply bg-gray-800;
+}
+
+.dark .fc-timegrid-cols {
+  @apply bg-gray-800;
+}
+
+.dark .fc-theme-standard .fc-scrollgrid {
+  @apply border-gray-700;
+}
+
+.dark .fc-theme-standard .fc-scrollgrid-section-header > * {
+  @apply border-gray-700;
+}
+
+.dark .fc-theme-standard .fc-scrollgrid-section-body > * {
+  @apply border-gray-700;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-colors;
+}
+
+.card-header {
+  @apply p-6 border-b border-gray-200 dark:border-gray-700;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+.card-footer {
+  @apply p-6 border-t border-gray-200 dark:border-gray-700;
+}
+
+/* Status Badges */
+.badge {
+  @apply px-2.5 py-1 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+}
+
+.badge-danger {
+  @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200;
+}
+
+.badge-info {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+}
+
+.badge-neutral {
+  @apply bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200;
+}
+
+/* Icon Containers */
+.icon-container {
+  @apply p-2 rounded-lg;
+}
+
+.icon-container-lg {
+  @apply p-3 rounded-lg;
+}
+
+.icon-container-xl {
+  @apply p-4 rounded-lg;
+}
+
+/* Gradient Text */
+.gradient-text-primary {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-primary-600;
+}
+
+.gradient-text-success {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-600;
+}
+
+.gradient-text-warning {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-600;
+}
+
+.gradient-text-danger {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-rose-600;
+}
+
+.gradient-text-info {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-600;
+}
