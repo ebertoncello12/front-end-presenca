@@ -131,7 +131,7 @@ const RegistrarPresenca = () => {
       context.drawImage(scanVideoRef.current, 0, 0, canvas.width, canvas.height);
 
       const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-      const code = jsQR(imageData.data, imageData.width, imageData.height);
+      const code =    (imageData.data, imageData.width, imageData.height);
 
       if (code) {
         try {
